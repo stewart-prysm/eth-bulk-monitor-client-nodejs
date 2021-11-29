@@ -304,7 +304,7 @@ class MonitorClient extends EventEmitter {
                         }
                     });
                 }
-                if (operationsData) {
+                if (operationsData && !this.options.watchOperations) {
                     this.log('Processing operations...');
                     const addresses = Object.keys(operationsData);
                     for (let j = 0; j < addresses.length; j++) {
